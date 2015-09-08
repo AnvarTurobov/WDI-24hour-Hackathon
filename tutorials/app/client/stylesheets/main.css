@@ -29,3 +29,19 @@ a.active {
     color: 0900ff;
 }
 */
+
+.artist-list{
+  width: 600px;
+  height: 200px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+}
+
+.artist-list .image-container{
+  display: inline-block;
+  width: 158px;
+  height: 158px;
+  background-position: center;
+  background-size: cover;
+}

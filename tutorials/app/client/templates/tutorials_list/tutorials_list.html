@@ -1,44 +1,45 @@
 <template name="TutorialsList">
   <h1>Tutorials List</h1>
   <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Due Date</th>
-            <th>Priority</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Upload Date</th>
+        <th>Level</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+     {{#each tutorials}}
+     {{ title}}
+     {{/each}}
+     <tr>
+      <td>{{title}}</td>
+      <video ng-src="{{description}}"></video>
+      <td>{{uploadDateFormatted}}</td>
+      <td>
+        {{#if levelAdvanced}}
+        <span class="label label-danger">{{level}}</span>
+        {{/if}}
 
-          {{#each tutorials}}
-            <tr>
-              <td>{{title}}</td>
-              <td>{{description}}</td>
-              <td>{{dueDateFormatted}}</td>
-              <td>
-                {{#if priorityHigh}}
-                  <span class="label label-danger">{{priority}}</span>
-                {{/if}}
+        {{#if levelIntermediate}}
+        <span class="label label-warning">{{level}}</span>
+        {{/if}}
 
-                {{#if priorityMedium}}
-                  <span class="label label-warning">{{priority}}</span>
-                {{/if}}
+        {{#if levelBeginner}}
+        <span class="label label-easy">{{level}}</span>
+        {{/if}}
+      </td>
+      <td>
+        {{#linkTo route='editTutorial'}}
+        <i class="fa fa-pencil-square-o"></i>
+        {{/linkTo}}
+      </td>
+    </tr>
+    <!-- {{/each}} -->
 
-                {{#if priorityLow}}
-                  <span class="label label-success">{{priority}}</span>
-                {{/if}}
-              </td>
-              <td>
-                {{#linkTo route='editTutorial'}}
-                  <i class="fa fa-pencil-square-o"></i>
-                {{/linkTo}}
-              </td>
-            </tr>
-          {{/each}}
-
-        </tbody>
-      </table>
+  </tbody>
+</table>
 
 </template>

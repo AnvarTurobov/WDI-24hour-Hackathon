@@ -2,30 +2,30 @@ Template.TutorialsList.events({
 });
 
 Template.TutorialsList.helpers({
-  issues: function () {
+  tutorials: function () {
     return Tutorials.find();
   },
 
-  dueDateFormatted: function () {
-    return moment(this.dueDate).format("MMM Do YY");
+  uploadDateFormatted: function () {
+    return moment(this.uploadDate).format("MMM Do YY");
   },
 
-  priorityHigh: function() {
-    if (this.priority === 'High')
+  levelAdvanced: function() {
+    if (this.level === 'Advanced')
       return true;
     else
       return false;
   },
 
-  priorityMedium: function() {
-    if (this.priority === 'Medium')
+  levelIntermediate: function() {
+    if (this.level === 'Intermediate')
       return true;
     else
       return false;
   },
 
-  priorityLow: function() {
-    if (this.priority === 'Low')
+  levelBeginner: function() {
+    if (this.level === 'Beginner')
       return true;
     else
       return false;

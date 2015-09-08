@@ -11,17 +11,17 @@ Tutorials.attachSchema(new SimpleSchema({
     label: "Description",
     max: 1024
   },
-  dueDate:
+  uploadDate:
   {
     type: Date,
-    label: "Due Date",
+    label: "Upload Date",
     optional: true
   },
-  priority:
+  level:
   {
     type: String,
-    label: "Priority",
-    allowedValues: ['High', 'Medium', 'Low'],
+    label: "Level",
+    allowedValues: ['Advanced', 'Intermediate', 'Beginner'],
     optional: true
   },
   createdBy: {
