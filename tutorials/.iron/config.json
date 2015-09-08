@@ -6,17 +6,9 @@
   },
 
   "template": {
-    "html": "true",
-    "js": "true",
-    "css": "true"
-  },
-
-  "route": {
-    "controller": "true",
-    "template": "true"
-  },
-
-  "generator": {
-    "comments": "true"
+    "html": true,
+    "js": true,
+    "css": true
   }
 }
+

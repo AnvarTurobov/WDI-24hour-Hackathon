@@ -1,0 +1,6 @@
+<template name="EditTutorial">
+  <h1>Edit Tutorial</h1>
+  {{> quickForm collection="Tutorials" doc=this id="editTutorialForm" type="update" omitFields="createdBy" buttonContent="Update"}}
+  <hr>
+  {{> quickRemoveButton collection="Tutorials" _id=this._id beforeRemove=beforeRemove class="btn btn-danger"}}
+</template>

@@ -1,44 +1,49 @@
 Tutorials = new Mongo.Collection('tutorials');
+
 Tutorials.attachSchema(new SimpleSchema({
   title:{
     type: String,
-    label: “Title”,
-    max: 200
+    label: "Title",
+    max: 100
   },
   description:{
     type: String,
-    label: “Description”,
+    label: "Description",
     max: 1024
   },
   dueDate:
   {
     type: Date,
-    label: “Due Date”,
+    label: "Due Date",
     optional: true
   },
   priority:
   {
     type: String,
-    label: “Priority”,
-    allowedValues: [‘High’, ‘Medium’, ‘Low’],
+    label: "Priority",
+    allowedValues: ['High', 'Medium', 'Low'],
     optional: true
   },
   createdBy: {
     type: String,
     autoValue: function() {
-    return this.userId
+       return this.userId
+    }
   }
-}}));
+}));
+
 if (Meteor.isServer) {
-  Tutorials.allow({ 
+  Tutorials.allow({
     insert: function (userId, doc) {
-      return true;
+      return userId;
     },
+
     update: function (userId, doc, fieldNames, modifier) {
-      return true;
+      return userId;
     },
+
     remove: function (userId, doc) {
-      return true;
+      return userId;
     }
   });
 }

@@ -1,34 +1,37 @@
-<template name=”MasterLayout”>
-  <nav class=”navbar navbar-inverse navbar-fixed-top” role=”navigation”>
-    <div class=”container”>
-      <div class=”navbar-header”>
-        <button type=”button” class=”navbar-toggle” data-toggle=”collapse” data-target=”#navigationbar”>
-          <span class=”sr-only”>Toggle navigation</span>
-          <span class=”icon-bar”></span>
-          <span class=”icon-bar”></span>
-          <span class=”icon-bar”></span>
-        </button>
-        <a class=”navbar-brand” href=”#”><i class=”fa fa-medium”></i> TutorialTracker</a>
+<template name="MasterLayout">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="fa fa-code"></i> TutorialsJS</a>
       </div>
-      <div class=”collapse navbar-collapse” id=”navigationbar”>
-        <ul class=”nav navbar-nav navbar-right”>
-          <li>{{#linkTo route=”home”}}<i class=”fa fa-home”></i>   Home{{/linkTo}}</li>
-          {{#if currentUser}}
-            <li>{{#linkTo route=”tutorialsList”}}<i class=”fa fa-align-justify”></i> Tutorials{{/linkTo}}</li>
-            <li>{{#linkTo route=”insertTutorial”}}<i class=”fa fa-plus”></i> New Tutorial{{/linkTo}}</li>
-          {{/if}}
-          <li><div class=”nav navbar-nav navbar-right”> {{> loginButtons}}</div></li>
+      <div class="collapse navbar-collapse" id="navigationbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li>{{#linkTo route="home"}}<i class="fa fa-home"></i> Home{{/linkTo}}</li>
+            {{#if currentUser}}
+              <li>{{#linkTo route="tutorialsList"}}<i class="fa fa-align-justify"></i> Tutorials{{/linkTo}}</li>
+              <li>{{#linkTo route="insertTutorial"}}<i class="fa fa-plus"></i> New Tutorial{{/linkTo}}</li>
+            {{/if}}
+            <li><div class="nav navbar-nav navbar-right"> {{> loginButtons}}</div></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class=”container”>
+  <div class="container">
     {{> yield}}
   </div>
-  <nav class=”navbar navbar-default navbar-fixed-bottom”>
-    <div class=”container”>
-      <ul class=”nav navbar-nav navbar-right”>
-        <li>Built with Meteor by Anavar Turobov</li>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <ul class="nav navbar-nav navbar-right">
+          <li>Built with Meteor and Love</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-left">
+          <li>Copyright &copy; Anvar Turobov 2015</li>
       </ul>
     </div>
   </nav>
