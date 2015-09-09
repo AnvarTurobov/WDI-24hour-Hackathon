@@ -10,6 +10,9 @@ body {
    background-color: #042c62;
 }
 
+.label label-easy {
+  border-color: #042c62;
+}
 
 .tech {
   margin: 0 auto;
