@@ -1,23 +1,25 @@
 <template name="TutorialsList">
 
-  {{> esInput index="tutorials" placeholder="Search..." }}
+  <div class="search">
+    {{> esInput index="tutorials" placeholder="Find something to learn..." }}
 
-  <ul>
-    {{#esEach index="tutorials"}}
-    <li><a href="{{tutorial.title}}">{{title}}</a> {{level}}</li>
-    {{/esEach}}
-  </ul>
+    <ul>
+      {{#esEach index="tutorials"}}
+      <li><a href="{{tutorial.title}}">{{title}}</a> {{level}}</li>
+      {{/esEach}}
+    </ul>
 
-  {{> esLoadMoreButton index="tutorials"}}
-  {{#ifEsHasNoResults index="tutorials"}}
+    {{> esLoadMoreButton index="tutorials"}}
+    {{#ifEsHasNoResults index="tutorials"}}
 
-  <div class="no-results">No results found!</div>
-  {{/ifEsHasNoResults}}
-  {{#ifEsIsSearching index="tutorials"}}
-  <div>Loading...</div>
-  {{/ifEsIsSearching}}
+    <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+    {{#ifEsIsSearching index="tutorials"}}
+    <div>Loading...</div>
+    {{/ifEsIsSearching}}
+  </div>
 
-  <h1>Tutorials List</h1>
+  <h2 id="new">Tutorials List</h2>
   <div class="tile">
     <div class="row">
       <ul>

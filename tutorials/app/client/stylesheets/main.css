@@ -7,7 +7,6 @@
 
 main {
   margin: 0 auto;
-  padding-top: 100px;
   text-align: center;
 }
 
@@ -48,6 +47,7 @@ h3 {
   margin-top: 20px;
   font-weight: 400;
 }
+
 
 button {
   background: none;
@@ -99,6 +99,7 @@ button {
  height: 50px;
  line-height: 50px;
  color: #333;
+ margin-top: 60px;
 }
 
 a {
@@ -201,3 +202,75 @@ ul {
 li {
   list-style: none;
 }
+
+form {
+  padding: 50px;
+}
+
+#new {
+  padding-top: 95px;
+  text-align: center;
+}
+
+#login-dropdown-list .btn {
+  background: none;
+  padding: 10px;
+  color: #333;
+  margin: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+#login-dropdown-list .btn:hover {
+background: #302C66;
+color: #FFF;
+}
+
+
+.navbar-inverse .navbar-nav > .open > a{
+  background: none;
+}
+
+.navbar-inverse .navbar-nav > .open > a:hover{
+
+}
+
+.btn-primary:hover {
+ background: #302C66; 
+ }
+
+ .btn-primary {
+  background: none;
+  padding: 10px;
+  color: #333;
+  margin: 10px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-weight: 500;
+ }
+
+ .search {
+  display: block;
+  width: 100%;
+ }
+
+ .search input[type=text] {
+  height: 30px;
+  border-radius: 5px;
+  background: white;
+  width: 100%;
+  border: 2px solid #f4f4f4;
+  line-height: 3em;
+  height: 3em;
+  text-align: center;
+ }
+
+ .search ul li {
+  line-height: 2em;
+ }
+
+ .search ul li a {
+  color: #302C66;
+  font-weight: 700;
+ }
