@@ -2,8 +2,25 @@ Template.TutorialsList.events({
 });
 
 Template.TutorialsList.helpers({
+
+  youtubeId: function(url) {
+      var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      var match = url.match(regExp);
+
+      if (match && match[2].length == 11) {
+        return match[2];
+      } else {
+        return 'error';
+      }
+  },
+
   tutorials: function () {
-    return Tutorials.find();
+     // var tutorials = Tutorials.find();
+     // for (var i = 0; i < tutorials.length; i++) {
+     //  tutorials[i].test = youtubeId(tutorials[i].description)
+     // }
+     // return tutorials;
+     return Tutorials.find();
   },
 
   uploadDateFormatted: function () {

@@ -4,6 +4,12 @@ Tutorials = new Mongo.Collection('tutorials');
   Tutorials._ensureIndex({packageName: 1, description: 1});
 }*/
 
+// Extended configuration
+Tutorials.initEasySearch(['title', 'level'], {
+    'limit' : 20,
+    'use' : 'mongo-db'
+});
+
 Tutorials.attachSchema(new SimpleSchema({
   title:{
     type: String,

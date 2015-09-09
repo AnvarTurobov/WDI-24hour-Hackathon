@@ -1,44 +1,136 @@
 <template name="TutorialsList">
+
+  {{> esInput index="tutorials" placeholder="Search..." }}
+
+  <ul>
+    {{#esEach index="tutorials"}}
+    <li><a href="{{tutorial.title}}">{{title}}</a> {{level}}</li>
+    {{/esEach}}
+  </ul>
+
+  {{> esLoadMoreButton index="tutorials"}}
+  {{#ifEsHasNoResults index="tutorials"}}
+
+  <div class="no-results">No results found!</div>
+  {{/ifEsHasNoResults}}
+  {{#ifEsIsSearching index="tutorials"}}
+  <div>Loading...</div>
+  {{/ifEsIsSearching}}
+
   <h1>Tutorials List</h1>
-  <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Upload Date</th>
-            <th>Level</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
+  <div class="tile">
+    <div class="row">
+      <ul>
+        {{#each tutorials}}
+        <li>
+          <div class="col-lg-6">
+            <ul>
+              <li><iframe width="450" height="280" src="https://www.youtube.com/embed/{{description}}" frameborder="0" allowfullscreen></iframe></li>
+              <li><h4>{{ title }}</h4></li>
+              <li><h5>{{uploadDateFormatted}}</h5></li>
 
-          {{#each tutorials}}
-            <tr>
-              <td>{{title}}</td>
-              <td>{{description}}</td>
-              <td>{{uploadDateFormatted}}</td>
-              <td>
-                {{#if levelAdvanced}}
-                  <span class="label label-danger">{{level}}</span>
-                {{/if}}
+              {{#if levelAdvanced}}
+              <li><span class="label label-danger">{{level}}</span></li>
+              {{/if}}
 
-                {{#if levelIntermediate}}
-                  <span class="label label-warning">{{level}}</span>
-                {{/if}}
+              {{#if levelIntermediate}}
+              <li><span class="label label-warning">{{level}}</span></li>
+              {{/if}}
 
-                {{#if levelBeginner}}
-                  <span class="label label-easy">{{level}}</span>
-                {{/if}}
-              </td>
-              <td>
-                {{#linkTo route='editTutorial'}}
-                  <i class="fa fa-pencil-square-o"></i>
-                {{/linkTo}}
-              </td>
-            </tr>
-          {{/each}}
-
-        </tbody>
-      </table>
+              {{#if levelBeginner}}
+              <li><span class="label label-easy">{{level}}</span></li>
+              {{/if}}
+              <br>
+              {{#linkTo route='editTutorial'}}
+              <li><i class="fa fa-pencil-square-o"></i></li>
+              {{/linkTo}}
+            </ul>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
 </template>
+
+
+<!-- <div class="tile">
+  <div class="row">
+    <ul>
+      {{#each tutorials}}
+      <li>
+        <div class="col-lg-6">
+          <ul>
+            <li><iframe width="450" height="280" src="https://www.youtube.com/embed/{{description}}" frameborder="0" allowfullscreen></iframe></li>
+            <li><h4>{{ title }}</h4></li>
+            <li><h5>{{uploadDateFormatted}}</h5></li>
+
+            {{#if levelAdvanced}}
+            <li><span class="label label-danger">{{level}}</span></li>
+            {{/if}}
+
+            {{#if levelIntermediate}}
+            <li><span class="label label-warning">{{level}}</span></li>
+            {{/if}}
+
+            {{#if levelBeginner}}
+            <li><span class="label label-easy">{{level}}</span></li>
+            {{/if}}
+            <br>
+            {{#linkTo route='editTutorial'}}
+            <li><i class="fa fa-pencil-square-o"></i></li>
+            {{/linkTo}}
+          </ul>
+        </div>
+      </li>
+    </ul>
+    {{/each}}
+  </div>
+</div> -->
+
+
+
+<!-- <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Upload Date</th>
+      <th>Level</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each tutorials}}
+
+    <tr>
+      <td>
+        <iframe width="450" height="280" src="https://www.youtube.com/embed/{{description}}" frameborder="0" allowfullscreen></iframe>
+      </td>
+      <td>{{title}}</td>
+      <td>{{uploadDateFormatted}}</td>
+      <td>
+        {{#if levelAdvanced}}
+        <span class="label label-danger">{{level}}</span>
+        {{/if}}
+
+        {{#if levelIntermediate}}
+        <span class="label label-warning">{{level}}</span>
+        {{/if}}
+
+        {{#if levelBeginner}}
+        <span class="label label-easy">{{level}}</span>
+        {{/if}}
+      </td>
+      <td>
+        {{#linkTo route='editTutorial'}}
+        <i class="fa fa-pencil-square-o"></i>
+        {{/linkTo}}
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table> -->
