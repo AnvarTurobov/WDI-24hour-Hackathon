@@ -1,5 +1,9 @@
 Tutorials = new Mongo.Collection('tutorials');
 
+/*if(Meteor.isServer) {
+  Tutorials._ensureIndex({packageName: 1, description: 1});
+}*/
+
 Tutorials.attachSchema(new SimpleSchema({
   title:{
     type: String,
