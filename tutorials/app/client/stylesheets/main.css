@@ -7,20 +7,24 @@ body {
 
 
 .navbar-inverse {
-   background-color: #042c62;
+ background-color: #042c62;
 }
 
 .label label-easy {
   border-color: #042c62;
 }
 
-/*.tech {
+.tech {
   margin: 0 auto;
   border: 3px solid;
   border-color: #042c62;
   border-radius: 20px;
 }
-*/
+
+.glyphicon {
+  content: "\e005";
+  color: red;
+}
 /*a {
     color: 005eff;
 }

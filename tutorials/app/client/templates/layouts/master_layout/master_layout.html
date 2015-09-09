@@ -13,6 +13,7 @@
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
             <li>{{#linkTo route="home"}}<i class="fa fa-home"></i> Home{{/linkTo}}</li>
+            <li>{{#linkTo route="frameworks"}} JS FrameWorks{{/linkTo}}</li>
             {{#if currentUser}}
               <li>{{#linkTo route="tutorialsList"}}<i class="fa fa-align-justify"></i> Tutorials{{/linkTo}}</li>
               <li>{{#linkTo route="insertTutorial"}}<i class="fa fa-plus"></i> New Tutorial{{/linkTo}}</li>
@@ -28,7 +29,7 @@
   <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
-          <li>Built with Meteor and Love</li>
+          <li>Built with Meteor, Iron-Meteor, Bootstrap and <span class=" glyphicon glyphicon-heart"></span></li>
       </ul>
       <ul class="nav navbar-nav navbar-left">
           <li>Copyright &copy; Anvar Turobov 2015</li>

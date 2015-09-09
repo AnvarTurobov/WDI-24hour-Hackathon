@@ -11,6 +11,13 @@ Router.route('/', {
   where: 'client'
 });
 
+Router.route('/frame_works', {
+  name: 'frameworks',
+  controller: 'FrameWorksController',
+  action: 'action',
+  where: 'client'
+});
+
 Router.route('/insert_tutorial', {
   name: 'insertTutorial',
   controller: 'TutorialsController',
@@ -38,6 +45,6 @@ Router.onBeforeAction(function() {
     this.render('AccessDenied');
   } else
   {
-     this.next();
-  }
+   this.next();
+ }
 }, {only: ['tutorialsList', 'insertTutorial']});
