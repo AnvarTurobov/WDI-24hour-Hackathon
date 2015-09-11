@@ -4,14 +4,14 @@ Template.TutorialsList.events({
 Template.TutorialsList.helpers({
 
   youtubeId: function(url) {
-      var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-      var match = url.match(regExp);
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
 
-      if (match && match[2].length == 11) {
-        return match[2];
-      } else {
-        return 'error';
-      }
+    if (match && match[2].length == 11) {
+      return match[2];
+    } else {
+      return 'error';
+    }
   },
 
   tutorials: function () {
@@ -21,9 +21,9 @@ Template.TutorialsList.helpers({
      // }
      // return tutorials;
      return Tutorials.find();
-  },
+   },
 
-  uploadDateFormatted: function () {
+   uploadDateFormatted: function () {
     return moment(this.uploadDate).format("MMM Do YY");
   },
 
